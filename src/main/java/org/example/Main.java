@@ -7,6 +7,7 @@ public class Main {
         String result = null;
         try {
             int j = 1;
+            // Run heartbeat in main thread and start main logic in separate thread
             CompletableFuture<String> heartBeatFuture = startActivityExecution();
             while (!heartBeatFuture.isDone()){
                 System.out.println("*******HEARTBEATING DONE " + j++ + "*********");
